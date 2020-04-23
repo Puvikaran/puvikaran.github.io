@@ -4,74 +4,142 @@ $primary-color:rebeccapurple;
     background-color: $primary-color;
 }
 
-.custom-card {
+.profile-card {
     margin-top: -185px;
-    margin-bottom: 20px;
 
     .card-text-container {
         position: relative;
 
-        h3 {
+        h3,
+        h4 {
             margin: 0;
-            margin-top: 5px;
-            color: $primary-color;
         }
 
-        .tooltip {
-            margin-top: 15px;
-            margin-bottom: 6px;
-            display: inline-block;
-            position: relative;
-
-            &:after {
-                content: '';
-                position: absolute;
-                top: 100%;
-                right: 0;
-                margin: 0 auto;
-                width: 0;
-                height: 0;
-                border-top: solid 12px $primary-color;
-                border-left: solid 12px transparent;
-            }
-
-            .tooltiptext {
-                background-color: $primary-color;
-                color: #fff;
-                text-align: center;
-                padding: 5px;
-
-            }
-        }
-
-        hr {
+        .profile {
+            color: #3d4451;
+            padding-bottom: 10px;
             margin: 10px 0;
+            border-bottom: 1px solid #dedede;
+
+            .my-name {
+                font-size: 36px;
+                line-height: 1.1;
+                font-weight: 700;
+                margin-bottom: 5px;
+
+                span {
+                    font-weight: 300;
+                }
+            }
+
+            .designation {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.1;
+                margin-bottom: 0;
+            }
+
+            .tooltip {
+                margin-bottom: 16px;
+                display: inline-block;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 5px;
+                    margin: 0 auto;
+                    width: 0;
+                    height: 0;
+                    border-top: solid 12px $primary-color;
+                    border-right: solid 12px transparent;
+                }
+
+                .tooltiptext {
+                    background-color: $primary-color;
+                    color: #fff;
+                    text-align: center;
+                    padding: 7px 12px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+
+            @media only screen and (max-width: 358px) {
+                .my-name {
+                    font-size: 28px;
+                    line-height: 1.2;
+                }
+            }
         }
 
         .detail-section {
-            margin-bottom: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
 
             .title {
-                font-weight: bold;
+                display: block;
+                width: 120px;
+                float: left;
+                color: #333333;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 20px;
+                text-transform: uppercase;
+            }
+
+            .content {
+                display: block;
+                margin-left: 125px;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 20px;
+                color: #9da0a7;
+
+                a {
+                    color: #3d4451;
+                }
+            }
+
+            @media only screen and (max-width: 600px) {
+                .title {
+                    width: 100%;
+                }
+
+                .content {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .social {
+
+        ul {
+            padding: 15px;
+
+            li {
+                margin: 0;
             }
         }
 
         .bar {
-            position: absolute;
-            width: 100%;
-            left: 0;
-            right: 0;
-            bottom: -50px;
-            height: 45px;
-            margin: 0;
-            padding: 5px 0;
             display: flex;
-            flex-direction: row;
             align-items: center;
+            justify-content: center;
+            margin: 0;
+            list-style: none;
+            text-align: center;
 
             a {
+                width: 60px;
+                position: relative;
+                display: inline-block;
+                background-color: transparent;
                 text-decoration: none;
-                cursor: pointer;
             }
 
             i {
@@ -82,15 +150,12 @@ $primary-color:rebeccapurple;
     }
 }
 
-.description {
+.description-card {
     padding: 15px;
     margin-top: 30px;
 
-    @media only screen and (max-width: 440px) {
-        margin-top: 60px;
-    }
-
     p {
-        margin: 0
+        margin: 0;
+        line-height: 2;
     }
 }
